@@ -8,4 +8,9 @@ end
 # to this method
 class Array
   # Define my_each here
+  def my_each
+    length.times { |idx| yield(self[idx]) } if block_given?
+
+    self
+  end
 end
