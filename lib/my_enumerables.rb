@@ -48,7 +48,7 @@ module Enumerable
     length
   end
 
-  def my_map(&symbol)
+  def my_map
     mapped_array = []
     if block_given?
       for element in self
@@ -56,6 +56,14 @@ module Enumerable
       end
     end
     mapped_array
+  end
+
+  def my_inject(initial_value = 0)
+    total = initial_value
+    for element in self
+      total = yield(total, element)
+    end
+    total
   end
 end
 
