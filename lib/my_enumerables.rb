@@ -47,6 +47,16 @@ module Enumerable
     end
     length
   end
+
+  def my_map(&symbol)
+    mapped_array = []
+    if block_given?
+      for element in self
+        mapped_array << yield(element)
+      end
+    end
+    mapped_array
+  end
 end
 
 # You will first have to define my_each
