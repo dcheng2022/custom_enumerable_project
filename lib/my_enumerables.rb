@@ -24,7 +24,9 @@ end
 class Array
   # Define my_each here
   def my_each
-    length.times { |idx| yield(self[idx]) } if block_given?
+    for element in self
+      yield(element) if block_given?
+    end
 
     self
   end
