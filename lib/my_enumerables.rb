@@ -6,11 +6,11 @@ module Enumerable
     self
   end
 
-  def select
+  def my_select
     pass_condition = []
     if block_given?
-      length.times do |idx|
-        pass_condition << self[idx] if yield(self[idx])
+      for element in self
+        pass_condition << element if yield(element)
       end
     end
     pass_condition
