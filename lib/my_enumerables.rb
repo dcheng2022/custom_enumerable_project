@@ -15,6 +15,13 @@ module Enumerable
     end
     pass_condition
   end
+
+  def my_all?
+    for element in self
+      return false unless yield(element)
+    end
+    true
+  end
 end
 
 # You will first have to define my_each
