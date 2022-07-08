@@ -5,6 +5,16 @@ module Enumerable
 
     self
   end
+
+  def select
+    pass_condition = []
+    if block_given?
+      length.times do |idx|
+        pass_condition << self[idx] if yield(self[idx])
+      end
+    end
+    pass_condition
+  end
 end
 
 # You will first have to define my_each
