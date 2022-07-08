@@ -1,5 +1,10 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index
+    length.times { |idx| yield(self[idx], idx) } if block_given?
+
+    self
+  end
 end
 
 # You will first have to define my_each
